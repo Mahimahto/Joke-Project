@@ -1,0 +1,38 @@
+*{
+  margin: 10px;
+  text-align: center;
+}
+h1{
+  font-size: 3em;
+  border: 2px solid white;
+  color: #fff;
+  border-radius: 10px;
+  background-color:darkblue;
+  box-shadow: 0 0 10px 10px lightslategray;
+
+}
+.jokeDiv{
+  margin-top: 30px;
+  display: flex;
+  background-color:coral;
+  border: #fff 3px solid;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 2em;
+  box-shadow: 0 0 10px 10px lightslategrey;
+}
+.button{
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  margin-right: 10px;
+  background-color: darkblue;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  box-shadow: 0 0 10px 10px lightslategray;
+  margin: 20px;
+  text-align: center;
+  border: 2px white solid;
+  border-radius: 10px;
+}
