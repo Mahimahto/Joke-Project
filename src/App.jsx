@@ -1,10 +1,7 @@
 import { useState ,useEffect } from 'react'
 import './App.css'
-import Joke from './Joke'
-
 function App() {
-  const[joke,setJoke] = useState("")
-  const[secondJoke,setSecondJoke] = useState("")
+  const [data,setData] = useState("")
   function handleclick(){
     fetch("https://v2.jokeapi.dev/joke/Any")
     .then((response)=>{
@@ -12,20 +9,16 @@ function App() {
     })
     .then((data)=>{
       console.log(data);
-      if(data.type==="single"){
-       return (setJoke(data.joke),setSecondJoke(""))
-      }else{
-       return (setJoke(data.delivery),
-       setSecondJoke(data.setup))
-      }
-    })
+     setData(data)})
   }
   useEffect(()=>{
     handleclick()
   },[])
+
   return (<div>
       <h1>Make A Joke</h1>
-      <Joke jokeType={joke} secondJoke = {secondJoke}/>
+      {data.type==="single"?(<div className='jokeDiv'><p>{data.joke}</p></div>)
+      :(<div className='jokeDiv'><p>{data.setup}</p><p>{data.delivery}</p></div>)}
       <div className='button' onClick={handleclick}>Another Joke</div>
       </div>
   )
